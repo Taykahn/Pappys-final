@@ -3,9 +3,11 @@
  * Front Page
  */
 
-get_header() ?>
+get_header();
 
-<?php 
+	## Try to load most of your images with custom fields using ACF 
+
+	## https://www.advancedcustomfields.com/resources/image/
 
 	$pappys_img = CWS_Theme::cws_get_img( 'pappys-logo4.png', 'Pappy\'s Grill &amp; Pub' );
 
@@ -36,6 +38,14 @@ get_header() ?>
 		'posts_per_page' =>'1' 
 
 	);
+
+	## Way too many WP_Query objects. 
+
+	## Again, leverage using ACF custom fields to store values. 
+
+	## You don't have to build a page to get values, just create a custom field
+
+	## https://www.advancedcustomfields.com/resources/code-examples/
 
 	$featured_items = new WP_Query( $args );
 
