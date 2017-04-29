@@ -3,11 +3,10 @@
  * Front Page
  */
 
-get_header();
+get_header() ?>
 
-	## Try to load most of your images with custom fields using ACF 
 
-	## https://www.advancedcustomfields.com/resources/image/
+<?php 
 
 	$pappys_img = CWS_Theme::cws_get_img( 'pappys-logo4.png', 'Pappy\'s Grill &amp; Pub' );
 
@@ -18,14 +17,6 @@ get_header();
 	$parallax_img = CWS_Theme::cws_get_img( 'pappys-menu.png', 'Menu' );
 
 	$banner_img = CWS_Theme::cws_get_img( 'pappys-banner.png', 'Menu' );
-
-	$server_img = CWS_Theme::cws_get_img( 'server.png', 'Sever' );
-
-	$beer_img = CWS_Theme::cws_get_img( 'beer.png', 'Beer' );
-
-	$whining_img = CWS_Theme::cws_get_img( 'whining.png', 'Whining Sign' );
-
-	$bar_sign_img = CWS_Theme::cws_get_img( 'bar-sign.png', 'Bar Sign' );
 
 	$store_front_img = CWS_Theme::cws_get_img( 'store-front.png', 'Store Front' );
 
@@ -38,14 +29,6 @@ get_header();
 		'posts_per_page' =>'1' 
 
 	);
-
-	## Way too many WP_Query objects. 
-
-	## Again, leverage using ACF custom fields to store values. 
-
-	## You don't have to build a page to get values, just create a custom field
-
-	## https://www.advancedcustomfields.com/resources/code-examples/
 
 	$featured_items = new WP_Query( $args );
 
@@ -361,3 +344,4 @@ get_header();
 </section><!-- one-column row no-pad -->
 
 <?php get_footer() ?>
+
