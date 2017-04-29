@@ -145,7 +145,8 @@
 		font-weight: 600;
 		font-size: 19px;
 	}
-	.lunch-dinner, .menu {
+	.lunch-dinner, 
+	.menu {
 		text-align: center;
 	}
 }
@@ -170,6 +171,7 @@
 	}
 	.button a {
 		font-size: 100%;
+		width: 54%;
 		}
 	.secondary-2 
 	.col-sm-5 {
@@ -219,7 +221,7 @@
 
 @media (max-width: 320px) {
 	.bar-img p {
-		padding-top: 1em;
+		padding-top: 20px;
 	}
 }
 

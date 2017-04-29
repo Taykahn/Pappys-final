@@ -12,7 +12,8 @@ body {
 	background-color: #ddd;
 }
 
-.row, .col-sm-12 {
+.row, 
+.col-sm-12 {
 	padding-left: 0px;
 	padding-right: 0px;
 	margin-left: 0px;
@@ -43,7 +44,8 @@ a:hover {
   color: rgba(255, 169, 73, .4);
 }
 
-.container, .col-md-12 {
+.container, 
+.col-md-12 {
 	padding: 0px;
 }
 
