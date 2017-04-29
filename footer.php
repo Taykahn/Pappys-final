@@ -65,22 +65,6 @@ $pappysLogo_img = CWS_Theme::cws_get_img( 'pappys-face.png');
 
 </footer>
 
-	<!--jQuery is included in WordPress no need for this, remove it.
-
-	<<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-
-	<script
-
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-	<script type="text/javascript" 
-
-	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-	<script type="text/javascript"
-
-	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>-->
-
 	<?php wp_footer(); ?>
 
 	</body>
