@@ -1,0 +1,25 @@
+.full-width-template,
+.site-inner {
+	max-width: 100%;
+	padding: 0;
+}
+
+/* Section 1 -- Hero Section */
+
+.hero {
+	background-size: cover;
+	background-position: center;
+}
+
+.cta_container {
+	text-align: center;
+	vertical-align: middle;
+	background-color: rgba(0, 0, 0, 0.52);
+	background: rgba(0, 0, 0, 0.52);
+	color: rgba(0, 0, 0, 0.52);
+}
+
+.cta_content {
+	padding: 100px 10px;
+	color: white;
+}

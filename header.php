@@ -74,9 +74,7 @@
 							$args = array(
 
 							'menu'          => 'header-menu',
-
 							'menu_class'    => 'nav navbar-nav',
-
 							'container'     => 'false'
 
 							);
@@ -91,43 +89,23 @@
 
 			</nav><!-- end navbar -->
 
-	<?php 
-
-		$banner_img = CWS_Theme::cws_get_img( 'background.png', 'Pappy\'s Grill &amp; Pub' ); 
-
-		$pappys_img = CWS_Theme::cws_get_img( 'pappys-logo4.png', 'Pappy\'s Grill &amp; Pub' );
-
-		$facebook_img = CWS_Theme::cws_get_img( 'facebook-wrap1.png'); 
-
-		$map_marker_img = CWS_Theme::cws_get_img( 'map-marker.png'); 
-
-		$phone_img = CWS_Theme::cws_get_img( 'phone-icon1.png');
-
-		$hours = new WP_Query( 'page_id=200' );
-
-	?>
-
 	<header>
 
 		<div class="container-fluid no-pad">
 
-			<div class="banner no-pad" style="background: url( '<?php echo esc_html( $banner_img ) ?>' ) 50%/cover no-repeat;">
+			<div class="banner no-pad" style="background: url( '<?php echo the_field( 'hero', 586 ) ?>' ) 50%/cover no-repeat;">
 
 				<div class="wrapper">
 
 					<div class="banner-img">
 
-						<a href="#"><img src="<?php echo esc_url( $pappys_img ) ?> "></a>
+						<img src="<?php echo the_field( 'hero', 590 ) ?> ">
 
 					</div><!--end banner-img-->
 
 					<div class="hours"> 
 
-						<?php while ($hours-> have_posts()) : $hours-> the_post();  ?>
-
-							<?php the_content(); ?>
-
-						<?php endwhile; ?>
+					<?php the_field('content', 200 ); ?>
 
 					</div> <!-- end hours -->
 
@@ -135,11 +113,11 @@
 
 						<ul class="social-icon-1">
 
-							<li><a href="#map_section"><img src="<?php echo esc_url( $map_marker_img ) ?>" alt="facebook logo" class="social-icon"></a></li>
+							<li><a href="#map_section"><img src="<?php echo the_field( 'hero', 606 ) ?>" alt="facebook logo" class="social-icon"></a></li>
 
-							<li><a href="https://www.facebook.com/Pappys-Grill-Pub-245352765500666/"><img src="<?php echo esc_url( $facebook_img ) ?>" alt="facebook logo" class="social-icon"></a></li>
+							<li><a href="https://www.facebook.com/Pappys-Grill-Pub-245352765500666/"><img src="<?php echo the_field( 'hero', 603 ) ?>" alt="facebook logo" class="social-icon"></a></li>
 
-							<li><a href="tel:816-390-9550"><img src="<?php echo esc_url( $phone_img ) ?>" alt="phone logo" class="social-icon"></a></li>
+							<li><a href="tel:816-390-9550"><img src="<?php echo the_field( 'hero', 609 ) ?>" alt="phone logo" class="social-icon"></a></li>
 
 						</ul><!-- end social-icon -->
 

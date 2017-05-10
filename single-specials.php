@@ -1,6 +1,6 @@
 <?php 
 /**
- * Featured Items
+ * Template Name: Specials Single Page
  */
 
 include( 'partials/header.php' );
@@ -9,11 +9,13 @@ include( 'partials/header.php' );
 
 	<?php
 
-	$table_img = CWS_Theme::cws_get_img( 'table.png', 'Pappy\'s Grill &amp; Pub' );
+	$args = array(
 
-	$args = array( 'post_type' => 'specials' );
+		'post_type' => 'specials'
 
-	$query = new WP_Query( $args );
+	);
+
+	$specials = new WP_Query( $args );
 
 	?>
 
@@ -23,25 +25,27 @@ include( 'partials/header.php' );
 
 			<div class="col-md-12">
 
-				<div class="featured-specials-banner  no-pad" style="background: url( '<?php echo esc_html( $table_img ) ?>' ) 50%/cover no-repeat; ">
+				<div class="featured-specials-banner  no-pad" style="background: url( '<?php echo the_field( 'hero', 619 ) ?>' ) 50%/cover no-repeat; ">
 
 					<h1>Weekly Specials</h1>
 
-				<?php if ( $query->have_posts() ) : ?>
-
-					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
 
 						<section class="col-md-6">
 
-							<h2><?php the_title(); ?></h2>
+							<h2><?php the_field('title'); ?></h2>
 
 							<div class="page-content">
 
-								<p><?php the_content(); ?></p>
+								<p><?php the_field('text'); ?></p>
 
 							</div><!-- end page-content -->
 
-							<p><?php the_meta(); ?></p>
+							<div class="price">
+
+							<p><?php the_field('price'); ?></p>
+
+							</div><!-- end price --> 
 
 						</section><!-- end col-md-6 -->
 
@@ -49,7 +53,7 @@ include( 'partials/header.php' );
 
 							<div class="page-image">
 
-								<?php the_post_thumbnail(); ?>
+								<img src="<?php the_field('image'); ?>" />
 
 							<br>
 
@@ -62,8 +66,6 @@ include( 'partials/header.php' );
 						</section><!-- end col-md-6 -->
 
 					<?php endwhile; ?>
-
-				<?php endif; ?>
 
 			</div><!-- end col-md-12 -->
 

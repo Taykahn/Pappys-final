@@ -1,6 +1,6 @@
 <?php
 /**
- * Front Page
+ * Template Name: Front Page
  */
 
 get_header() ?>
@@ -8,59 +8,25 @@ get_header() ?>
 
 <?php 
 
-	$pappys_img = CWS_Theme::cws_get_img( 'pappys-logo4.png', 'Pappy\'s Grill &amp; Pub' );
-
-	$about_img = CWS_Theme::cws_get_img( 'owners.png', 'Owners' );
-
-	$bar_img = CWS_Theme::cws_get_img( 'from-the-bar.png', 'Bar' );
-
-	$parallax_img = CWS_Theme::cws_get_img( 'pappys-menu.png', 'Menu' );
-
-	$banner_img = CWS_Theme::cws_get_img( 'pappys-banner.png', 'Menu' );
-
-	$store_front_img = CWS_Theme::cws_get_img( 'store-front.png', 'Store Front' );
-
 	$args = array( 
 
 		'post_type'      => 'featured_items', 
-
 		'orderby'        => 'rand', 
-
 		'posts_per_page' =>'1' 
 
 	);
 
-	$featured_items = new WP_Query( $args );
+	$featured=new WP_Query( $args );
 
 	$args = array(
 
 		'post_type'     =>'specials', 
-
 		'orderby'       =>'rand', 
-
 		'posts_per_page'=>'1'
 
 	);
 
 	$specials=new WP_Query( $args );
-
-	$contact = new WP_Query( 'page_id=56' );
-
-	$map = new WP_Query( 'page_id=69' );
-
-	$slider = new WP_Query( 'page_id=150' );
-
-	$giftcard = new WP_Query( 'page_id=194' );
-
-	$rewards_program = new WP_Query( 'page_id=196' );
-
-	$call_reserve = new WP_Query( 'page_id=198' );
-
-	$book_a_table = new WP_Query( 'page_id=223' );
-
-	$args = new WP_Query( 'page_id=9' );
-
-	$bar_text = new WP_Query( 'page_id=36' );
 
 ?>
 
@@ -71,9 +37,7 @@ get_header() ?>
 
 		<div class="row">
 
-			<div class="parallax" style="background-image: url( '<?php echo esc_html( $parallax_img ) ?>' )">
-
-<br>
+			<div class="parallax" style="background-image: url( '<?php echo the_field( 'hero', 504 ) ?>' )">
 
 				<h1>Featured Items &amp Weekly Specials</h1>
 
@@ -83,19 +47,15 @@ get_header() ?>
 
 					<div class="col-sm-6">
 
-						<?php if ( $featured_items->have_posts() ) : ?>
+						<?php while ( $featured->have_posts() ) : $featured->the_post(); ?>
 
-							<?php while ( $featured_items->have_posts() ) : $featured_items->the_post(); ?>
+							<h3><?php the_field('title'); ?></h3>
 
-								<h3><?php the_title(); ?></h3>
+							<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image'); ?>" /></a>
 
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<p><?php the_field('content'); ?></p>
 
-								<p><?php the_excerpt(); ?></p>
-
-							<?php endwhile; ?>
-
-						<?php endif ?>
+						<?php endwhile; // end of the loop. ?>
 
 					<?php wp_reset_postdata() ?>
 
@@ -109,19 +69,15 @@ get_header() ?>
 
 					<div class="col-sm-6">
 
-						<?php if ( $specials->have_posts() ) : ?>
+						<?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
 
-							<?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
+							<h3><?php the_field('title'); ?></h3>
 
-								<h3><?php the_title(); ?></h3>
+							<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image'); ?>" /></a>
 
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<p><?php the_field('text'); ?></p>
 
-								<p><?php the_excerpt(); ?></p>
-
-							<?php endwhile; ?>
-
-						<?php endif ?>
+						<?php endwhile; // end of the loop. ?>
 
 						<?php wp_reset_postdata() ?>
 
@@ -149,19 +105,11 @@ get_header() ?>
 
 			<div class="primary">
 
-				<div class="col-sm-5">
+				<a id="about_section"><div class="col-sm-5"></a>
 
-					<div class="about-img" style="background: url( '<?php echo esc_html( $about_img ) ?>' ) 50%/cover no-repeat; height: 650px;">
+					<div class="about-img" style="background: url( '<?php echo the_field( 'hero', 513 ) ?>' ) 50%/cover no-repeat; height: 650px;">
 
-						<?php while ($args-> have_posts()) : $args-> the_post();  ?>
-
-							<?php the_content(); ?></p>
-
-						<?php endwhile;?>
-
-						<?php wp_reset_postdata() ?>
-
-						<?php get_post(); ?>
+						<p><?php the_field('content', 546 ); ?></p><!-- About Text -->
 
 				</div><!-- col-sm-5 -->
 
@@ -173,13 +121,11 @@ get_header() ?>
 
 				<div class="col-sm-7">
 
-					<div class="bar-img" style="background: url( '<?php echo esc_html( $bar_img ) ?>' ) 50%/cover no-repeat;">
+					<div class="bar-img" style="background: url( '<?php echo the_field( 'hero', 516 ) ?>' ) 50%/cover no-repeat;">
 
-						<?php while ($bar_text-> have_posts()) : $bar_text-> the_post();  ?>
+							<h1><?php the_field('title', 558 ); ?></h1><!-- Bar Title -->
 
-							<?php the_content(); ?>
-
-						<?php endwhile;?>
+							<p><?php the_field('content', 558 ); ?></p><!-- Bar Text -->
 
 						<?php wp_reset_postdata() ?>
 
@@ -201,23 +147,23 @@ get_header() ?>
 
 		<div class="row">
 
-			<div class="parallax" style="background-image: url( '<?php echo esc_html( $banner_img ) ?>' )">
+			<div class="parallax" style="background-image: url( '<?php echo the_field( 'hero', 518 ) ?>' )">
 
 				<div class="row">
 
 					<!-- Primary 3 -->
 
-					<div class="primary-3">
+					<div class="primary-3"><!-- Giftcard -->
 
 						<div class="col-sm-4">
 
-							<?php while ($giftcard-> have_posts()) : $giftcard-> the_post();  ?>
+							<h1><?php the_field('title', 194 ); ?></h1>
 
-								<h1><?php the_title(); ?></h1>
+							<p><?php the_field('content', 194 ); ?></p>
 
-								<p><?php the_content(); ?></p>
+							<?php wp_reset_postdata() ?>
 
-							<?php endwhile; ?>
+							<?php get_post(); ?>
 
 						</div><!-- end col-sm-4 --> 
 
@@ -225,17 +171,17 @@ get_header() ?>
 
 					<!-- Secondary 2 -->
 
-					<div class="secondary-3">
+					<div class="secondary-3"><!-- Rewards Program -->
 
 						<div class="col-sm-4">
 
-							<?php while ($rewards_program-> have_posts()) : $rewards_program-> the_post();  ?>
+							<h1><?php the_field('title', 196 ); ?></h1>
 
-								<h1><?php the_title(); ?></h1>
+							<p><?php the_field('content', 196 ); ?></p>
 
-								<p><?php the_content(); ?></p>
+							<?php wp_reset_postdata() ?>
 
-							<?php endwhile;?>
+							<?php get_post(); ?>
 
 						</div><!-- end col-sm-4 --> 
 
@@ -243,17 +189,17 @@ get_header() ?>
 
 					<!-- Tertiary 3 -->
 
-					<div class="tertiary-3">
+					<div class="tertiary-3"><!-- Reservation -->
 
 						<div class="col-sm-4">
 
-							<?php while ($call_reserve-> have_posts()) : $call_reserve-> the_post();  ?>
+							<h1><?php the_field('title', 198 ); ?></h1>
 
-								<h1><?php the_title(); ?></h1>
+							<p><?php the_field('content', 198 ); ?></p>
 
-								<?php the_content(); ?>
+							<?php wp_reset_postdata() ?>
 
-							<?php endwhile;?>
+							<?php get_post(); ?>
 
 						</div><!-- end col-sm-4 --> 
 
@@ -285,11 +231,7 @@ get_header() ?>
 
 				<div class="col-sm-7">
 
-					<?php while ($map-> have_posts()) : $map-> the_post();  ?>
-
-						<?php the_content(); ?>
-
-					<?php endwhile; ?>
+					<?php the_field('content', 69 ); ?><!-- map -->
 
 				</div><!-- end col-sm-7 --> 
 
@@ -301,13 +243,9 @@ get_header() ?>
 
 				<div class="col-sm-5">
 
-					<div class="location" style="background: url( '<?php echo esc_html( $store_front_img ) ?>' ) 50%/cover no-repeat; height: 400px;">
+					<div class="location" style="background: url( '<?php echo the_field( 'hero', 525 ) ?>' ) 50%/cover no-repeat; height: 400px;">
 
-						<?php while ($contact-> have_posts()) : $contact-> the_post();  ?>
-
-							<?php the_content(); ?>
-
-						<?php endwhile;?>
+						<?php the_field('content', 56 ); ?><!-- Location -->
 
 				</div><!-- end col-sm-5 --> 
 
@@ -327,13 +265,7 @@ get_header() ?>
 
 			<div class="slider">
 
-				<?php $args = new WP_Query( 'page_id=150' ); ?>
-
-					<?php while ($args-> have_posts()) : $args-> the_post();  ?>
-
-						<?php the_content(); ?>
-
-					<?php endwhile;?>
+				<?php the_field('content', 150 ); ?>
 
 			</div><!-- end slider -->
 
@@ -344,4 +276,3 @@ get_header() ?>
 </section><!-- one-column row no-pad -->
 
 <?php get_footer() ?>
-

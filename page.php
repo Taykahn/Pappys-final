@@ -24,8 +24,6 @@
 
 			</div><!-- end col-md-9 -->
 
-		<?php get_sidebar(); ?>
-
 		</div><!-- end row -->
 
 	</div><!-- end container -->

@@ -98,15 +98,8 @@
 
 			</nav><!-- end navbar -->
 
-	<?php
-
-	$pappys_img = CWS_Theme::cws_get_img( 'pappys-logo4.png', 'Pappy\'s Grill &amp; Pub' );
-
-
-	?>
-
 	<div class="logo">
 
-		<img src="<?php echo esc_url( $pappys_img ) ?>">
+			<a href="http://localhost:3000/"><img src="<?php echo the_field( 'hero', 590 ) ?> "></a>
 
 	</div>

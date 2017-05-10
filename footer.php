@@ -2,11 +2,6 @@
 /**
 * Footer
 */ 
-
-$creditcard_img = CWS_Theme::cws_get_img( 'creditcards.png');
-
-$pappysLogo_img = CWS_Theme::cws_get_img( 'pappys-face.png');
-
 ?>
 
 </main>
@@ -23,7 +18,7 @@ $pappysLogo_img = CWS_Theme::cws_get_img( 'pappys-face.png');
 
 					<div class="cards">
 
-						<img src="<?php echo esc_url( $creditcard_img ) ?>" alt="creditcards">
+						<img src="<?php the_field('hero', 597 ); ?>" alt="creditcards">
 
 						<p>Sorry, no checks</p>
 
@@ -37,7 +32,7 @@ $pappysLogo_img = CWS_Theme::cws_get_img( 'pappys-face.png');
 
 						<div class="col-sm-4">
 
-							<img src="<?php echo esc_url( $pappysLogo_img ) ?>" alt="Pappys Logo">
+							<img src="<?php the_field('hero', 600 ); ?>" alt="Pappys Logo">
 
 							<p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
 
