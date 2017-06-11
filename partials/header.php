@@ -1,7 +1,7 @@
 <?php 
 /**
-* Header
-*/
+ * Header
+ */
 ?>
 
 <!DOCTYPE html>
