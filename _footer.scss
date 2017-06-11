@@ -2,18 +2,8 @@
 	background-color: #989898;
 }
 
-.col-sm-4 
-.cards {
-	img {
-		margin-top: 4.5em;
-	}
-	p {
-		font-size: 20px;
-	}
-}
-
 .pappys-logo {
-	.col-sm-4 img {
+	img {
 		display: block;
 		margin-left: auto;
 		margin-right: auto 
@@ -21,17 +11,6 @@
 	p {
 		font-size: 22px;
 		text-align: center;
+		font-weight: bold;
 	}
 }
-
-@media (max-width: 320px) {
-		.cards {
-		p {
-			margin-top: 1em;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
-}
-

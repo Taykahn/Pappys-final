@@ -1,7 +1,7 @@
 <?php 
 /** 
-* Template Name: Full Width Template
-*/
+ * Template Name: Full Width Template
+ */
 
 ?>
 

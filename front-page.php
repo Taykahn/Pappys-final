@@ -29,72 +29,6 @@ get_header() ?>
 	$specials=new WP_Query( $args );
 
 ?>
-
-
-<section class="two-column row no-pad">
-
-	<div class="col-sm-12">
-
-		<div class="row">
-
-			<div class="parallax" style="background-image: url( '<?php echo the_field( 'hero', 504 ) ?>' )">
-
-				<h1>Featured Items &amp Weekly Specials</h1>
-
-				<!-- Featured Items -->
-
-				<div class="featured-items">
-
-					<div class="col-sm-6">
-
-						<?php while ( $featured->have_posts() ) : $featured->the_post(); ?>
-
-							<h3><?php the_field('title'); ?></h3>
-
-							<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image'); ?>" /></a>
-
-							<p><?php the_field('content'); ?></p>
-
-						<?php endwhile; // end of the loop. ?>
-
-					<?php wp_reset_postdata() ?>
-
-					<?php get_post(); ?>
-
-					</div><!-- end col-sm-6 -->
-
-				</div><!-- end featured items -->
-
-				<div class="specials">
-
-					<div class="col-sm-6">
-
-						<?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
-
-							<h3><?php the_field('title'); ?></h3>
-
-							<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image'); ?>" /></a>
-
-							<p><?php the_field('text'); ?></p>
-
-						<?php endwhile; // end of the loop. ?>
-
-						<?php wp_reset_postdata() ?>
-
-						<?php get_post(); ?>
-
-					</div><!-- end col-sm-6 -->
-
-				</div><!-- end speacials -->
-
-			</div><!-- end parallax -->
-
-		</div><!-- end row -->
-
-	</div><!-- end col-md-12 -->
-
-</section><!-- end two-column row no-max pad -->
-
 <section class="two-column row no-pad">
 
 	<div class="col-sm-12">
@@ -147,6 +81,70 @@ get_header() ?>
 
 		<div class="row">
 
+			<div class="parallax" style="background-image: url( '<?php echo the_field( 'hero', 504 ) ?>' )">
+
+				<h1>Featured Items &amp Weekly Specials</h1>
+
+				<!-- Featured Items -->
+
+				<div class="featured-items">
+
+					<div class="col-sm-6">
+
+						<?php while ( $featured->have_posts() ) : $featured->the_post(); ?>
+
+							<h3><?php the_title(); ?></h3>
+
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+							<p><?php the_content(); ?></p>
+
+						<?php endwhile; // end of the loop. ?>
+
+					<?php wp_reset_postdata() ?>
+
+					<?php get_post(); ?>
+
+					</div><!-- end col-sm-6 -->
+
+				</div><!-- end featured items -->
+
+				<div class="specials">
+
+					<div class="col-sm-6">
+
+						<?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
+
+							<h3><?php the_title(); ?></h3>
+
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+							<p><?php the_content(); ?></p>
+
+						<?php endwhile; // end of the loop. ?>
+
+						<?php wp_reset_postdata() ?>
+
+						<?php get_post(); ?>
+
+					</div><!-- end col-sm-6 -->
+
+				</div><!-- end speacials -->
+
+			</div><!-- end parallax -->
+
+		</div><!-- end row -->
+
+	</div><!-- end col-md-12 -->
+
+</section><!-- end two-column row no-max pad -->
+
+<section class="two-column row no-pad">
+
+	<div class="col-sm-12">
+
+		<div class="row">
+
 			<div class="parallax" style="background-image: url( '<?php echo the_field( 'hero', 518 ) ?>' )">
 
 				<div class="row">
@@ -171,13 +169,17 @@ get_header() ?>
 
 					<!-- Secondary 2 -->
 
-					<div class="secondary-3"><!-- Rewards Program -->
+					<div class="secondary-3"><!-- Carry Out -->
 
 						<div class="col-sm-4">
 
-							<h1><?php the_field('title', 196 ); ?></h1>
+							<h1><?php the_field('title', 689 ); ?></h1>
 
-							<p><?php the_field('content', 196 ); ?></p>
+							<p><?php the_field('content', 689 ); ?></p>
+
+							<img src="<?php echo the_field( 'image', 689 ) ?>">
+
+							<h5><?php the_field('text', 689 ); ?></h5>
 
 							<?php wp_reset_postdata() ?>
 
@@ -189,13 +191,13 @@ get_header() ?>
 
 					<!-- Tertiary 3 -->
 
-					<div class="tertiary-3"><!-- Reservation -->
+					<div class="tertiary-3"><!-- Rewards Program -->
 
 						<div class="col-sm-4">
 
-							<h1><?php the_field('title', 198 ); ?></h1>
+							<h1><?php the_field('title', 196 ); ?></h1>
 
-							<p><?php the_field('content', 198 ); ?></p>
+							<p><?php the_field('content', 196 ); ?></p>
 
 							<?php wp_reset_postdata() ?>
 

@@ -38,8 +38,20 @@
 	text-decoration: none;
 }
 
-.sub-menu a:hover  {
+.sub-menu {
+	a:hover  {
 	color: black;
+	}
+	li, a {
+		font-size: 25px;
+		font-weight: bold;
+		color: #fff;
+	}
+}
+
+
+#menu-menu-1  a:hover {
+	color: #bbb;
 }
 
 .navbar-inverse
@@ -52,6 +64,8 @@
 	line-height: 1;
 	border-bottom: 1px solid transparent;
 	font-weight: bold;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .current-menu-item > a, 
@@ -97,7 +111,7 @@
 	.sub-menu {
 		display: none;
 		position: absolute;
-		background: #222;
+		background: rgba(9, 9, 9, 0.62);
 		padding: 10px 15px;
 		width: 200px;
 	}
@@ -105,8 +119,8 @@
 		display: block;
 	}
 	.navbar-nav > li > a {
-		padding-top: 0px; 
-		padding-bottom: 0px;
+		padding-top: 5px; 
+		padding-bottom: 5px;
 	}
 }
 

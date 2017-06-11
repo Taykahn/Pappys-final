@@ -1,6 +1,6 @@
 <?php 
 /**
- * Featured Items
+ * Template Name: Featured Items
  */
 
 include( 'partials/header.php' );
@@ -53,7 +53,7 @@ include( 'partials/header.php' );
 
 							<div class="page-image">
 
-								<img src="<?php the_field('image'); ?>" />
+								<?php the_post_thumbnail(); ?>
 
 							<br>
 

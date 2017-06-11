@@ -20,7 +20,7 @@
 
 		</title>
 
-<!-- Google Fonts -->
+	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Architects+Daughter|Shadows+Into+Light|Lato" rel="stylesheet">
 
 	<?php wp_head() ?>

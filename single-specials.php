@@ -33,7 +33,7 @@ include( 'partials/header.php' );
 
 						<section class="col-md-6">
 
-							<h2><?php the_field('title'); ?></h2>
+							<h2><?php the_title(); ?></h2>
 
 							<div class="page-content">
 
@@ -53,7 +53,7 @@ include( 'partials/header.php' );
 
 							<div class="page-image">
 
-								<img src="<?php the_field('image'); ?>" />
+								<?php the_post_thumbnail(); ?>
 
 							<br>
 

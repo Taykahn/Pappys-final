@@ -1,12 +1,12 @@
 <?php 
 /**
-* Footer
-*/ 
+ * Footer
+ */ 
 ?>
 
 </main>
 
-<footer>
+<footer class="footer">
 
 	<section class="three-column row no-pad">
 
@@ -16,41 +16,27 @@
 
 				<div class="col-sm-4">
 
-					<div class="cards">
-
-						<img src="<?php the_field('hero', 597 ); ?>" alt="creditcards">
-
-						<p>Sorry, no checks</p>
-
-					</div><!-- end cards -->
-
 				</div><!-- end col-sm-4 -->
 
-				<div class="copyright">
+				<div class="col-sm-4">
 
-					<div class="pappys-logo">
+					<div class="copyright">
 
-						<div class="col-sm-4">
+						<div class="pappys-logo">
 
 							<img src="<?php the_field('hero', 600 ); ?>" alt="Pappys Logo">
 
 							<p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
 
-						</div><!-- end col-sm-4 -->
+						</div><!-- end pappys-logo -->
 
-					</div><!-- end pappys-logo -->
+					</div><!-- end copyright -->
 
-				</div><!-- end copyright -->
+				</div><!-- end col-sm-4 -->
 
-				<div class="right">
+				<div class="col-sm-4">
 
-					<div class="col-sm-4">
-
-						<p></p>
-
-					</div><!-- end col-sm-4 -->
-
-				</div><!-- end right -->
+				</div><!-- end col-sm-4 -->
 
 			</div><!-- end row -->
 

@@ -6,6 +6,7 @@
 //Require included files
 require_once STYLESHEETPATH . '/includes/cws-theme-class.php';
 
+
 /**
  * Load theme styles and scripts
  *
@@ -28,7 +29,7 @@ function pbg_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'pbg_scripts' );
 
-//add_filter( 'show_admin_bar', '__return_false' );
+add_filter( 'show_admin_bar', '__return_false' );
 
 /**
  * add menus
@@ -43,6 +44,15 @@ function register_theme_menus() {
 	);
 }
 add_action( 'init', 'register_theme_menus' );
+
+/**
+ * Add an acf options page
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page();
+}
+
+
 
 /**
  * add widgets
@@ -100,25 +110,25 @@ function custom_post_type() {
 
 	$labels = array(
 
-		'name'                => _x( 'Menu-item', 'Post Type General Name', 'Pappys' ),
-		'singular_name'       => _x( 'Menu-item', 'Post Type Singular Name', 'Pappys-wp' ),
-		'menu_name'           => __( 'Menu-item', 'Pappys' ),
-		'parent_item_colon'   => __( 'Parent Menu', 'Pappys' ),
-		'all_items'           => __( 'All Menus', 'Pappys' ),
-		'view_item'           => __( 'View Menu', 'Pappys' ),
-		'add_new_item'        => __( 'Add New Item', 'Pappys' ),
-		'add_new'             => __( 'Add New', 'Pappys' ),
-		'edit_item'           => __( 'Edit Menu', 'Pappys' ),
-		'update_item'         => __( 'Update Item', 'Pappys' ),
-		'search_items'        => __( 'Search Menu', 'Pappys' ),
-		'not_found'           => __( 'Not Found', 'Pappys' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'Pappys' ),
+		'name'                => _x( 'Menu-item', 'Post Type General Name' ),
+		'singular_name'       => _x( 'Menu-item', 'Post Type Singular Name' ),
+		'menu_name'           => __( 'Menu-item'),
+		'parent_item_colon'   => __( 'Parent Menu' ),
+		'all_items'           => __( 'All Menus' ),
+		'view_item'           => __( 'View Menu' ),
+		'add_new_item'        => __( 'Add New Item' ),
+		'add_new'             => __( 'Add New' ),
+		'edit_item'           => __( 'Edit Menu' ),
+		'update_item'         => __( 'Update Item' ),
+		'search_items'        => __( 'Search Menu' ),
+		'not_found'           => __( 'Not Found' ),
+		'not_found_in_trash'  => __( 'Not found in Trash' ),
 	);
 // Set other options for Custom Post Type
 
 	$args = array(
-		'label'               => __( 'menu-item', 'Pappys' ),
-		'description'         => __( 'menu item description', 'Pappys' ),
+		'label'               => __( 'menu-item' ),
+		'description'         => __( 'menu item description' ),
 		'labels'              => $labels,
 
 		// Features this CPT supports in Post Editor
@@ -188,6 +198,7 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
 
 
 ?>

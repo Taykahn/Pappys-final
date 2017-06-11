@@ -1,7 +1,7 @@
 <?php
 /**
-* Template Name: Pappys Breakfast
-**/
+ * Template Name: Pappys Breakfast
+ */
 
 include( 'partials/header.php' );
 
